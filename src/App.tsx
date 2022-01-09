@@ -1,24 +1,28 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import "./App.css";
+import DualPc from "./Components/DualPc";
+import Heading from "./Components/Heading";
+import { ReactNode } from "./Components/ReactNode";
+import Status from "./Components/Status";
 
 function App() {
+  const aboutPerson = [
+    {
+      name: "Shohage",
+      age: 19,
+      country: "Bangladesh",
+      isAdult: true,
+      position: "Hard-work specialist",
+    },
+  ];
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Heading> Header </Heading>
+      <ReactNode>
+        <Heading>I am going to add with ReactNode</Heading>
+      </ReactNode>
+      <DualPc aboutPerson={aboutPerson} />
+      <Status status="error" />
     </div>
   );
 }
